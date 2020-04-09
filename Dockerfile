@@ -1,13 +1,6 @@
-FROM debian:jessie
+FROM python:latest
 
-LABEL maintainer "opsxcq@strm.sh"
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    python &&\
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+LABEL maintainer "justin@jpaul.me"
 
 COPY main.sh /
 RUN mkdir /www
